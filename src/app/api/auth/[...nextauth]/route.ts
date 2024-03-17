@@ -10,7 +10,7 @@ import Student from '@/models/student';
 import { NextResponse } from 'next/server';
 import { AdapterUser } from 'next-auth/adapters';
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },

@@ -6,38 +6,48 @@ import { HeroHeader, ContentSection } from '@/types/contents';
 -- Add images by adding files to /public folder
 -- Leave blank `` if you don't want to put texts or images
  ==================== */
-
 export const heroHeader: HeroHeader = {
   header: `Students Get Rentals`,
   subheader: `Platform for students to get rentals`,
-  image: `/hero-img.webp`,
+  image: `/hero.png`,
+  description:
+    'We help you get your rental! Go through our short online training system, get our badges, and sign up for the roommateTools.shop software , and it will put you head and sholders above the others looking to rent the house!',
 };
 
-export const featureCards: ContentSection = {
-  header: `Powered by`,
-  subheader: `What makes Next Landing possible`,
+export const requirements: ContentSection = {
+  header: `Requirements`,
+  subheader: `Requirements Homeowners and property managers will love include:`,
   content: [
     {
-      text: `Next.js`,
-      subtext: `The React Framework`,
-      icon: 'nextjs',
+      text: `Basic house cleaning system`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,`,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      image: '/basic-house-cleaning.webp',
+      link: '/learn/basic-house-cleaning',
     },
     {
-      text: `shadcn/ui`,
-      subtext: `Beautifully designed components`,
-      icon: 'shadcnUi',
+      text: `Basic house maintenance knowlege`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,`,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      image: '/home-repair.jpg',
+      link: '/learn/basic-house-maintainance',
     },
     {
-      text: `Vercel`,
-      subtext: `Develop. Preview. Ship.`,
-      icon: 'vercel',
+      text: `Neighbour management`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,`,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      image: '/neighbor-management.webp',
+      link: '/learn/neighbor-managment',
     },
   ],
 };
 
 export const features: ContentSection = {
-  header: `Features`,
-  subheader: `Why use Next Landing?`,
+  header: `Requirements`,
+  subheader: `Requirements Homeowners and property managers will love include:`,
   image: `/features-img.webp`,
   content: [
     {

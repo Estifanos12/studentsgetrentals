@@ -1,5 +1,3 @@
-import { signOut } from 'next-auth/react';
-
 export const navLinks = [
   {
     route: 'Home',
@@ -14,11 +12,10 @@ export const navLinks = [
     path: '/#services',
   },
   {
-    route: 'Log Out',
-    onclick: () => signOut(),
-  },
-  {
     route: 'Learn',
     path: '/learn',
+  },
+  {
+    route: 'Log Out',
   },
 ];

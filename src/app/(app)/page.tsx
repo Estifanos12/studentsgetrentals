@@ -1,28 +1,12 @@
-'use client';
-
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-
-import { Loading } from '@/components/common/loading';
 import Hero from '@/components/common/hero';
-import FeatureCards from '@/components/common/feature-cards';
-import Features from '@/components/common/features';
+import Requirments from '@/components/common/requirement-card';
+import Features from '@/components/common/requirement';
 
-export default function Home() {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-
-  if (status === 'loading') {
-    return <Loading />;
-  }
-
-  if (status === 'unauthenticated') {
-    router.push('/login');
-  }
+export default async function Home() {
   return (
     <>
       <Hero />
-      <FeatureCards />
+      <Requirments />
       <Features />
     </>
   );

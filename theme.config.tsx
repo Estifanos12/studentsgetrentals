@@ -24,7 +24,9 @@ const config: DocsThemeConfig = {
   toc: {
     component: null,
   },
-
+  sidebar: {
+    toggleButton: true,
+  },
   project: {},
   chat: {},
   footer: {

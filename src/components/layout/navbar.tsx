@@ -1,14 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+
 import { ThemeSwitch } from '../common/theme_switch';
 import { siteConfig } from '@/config/site';
 import { navLinks } from '@/lib/links';
-import { Button } from '../ui/button';
+import { Logout } from '../common/logout';
+import { SignIn } from '../common/signIn';
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
+
+  const { status } = useSession();
 
   const handleClick = async () => {
     setNavbar(false);
@@ -28,20 +33,20 @@ export default function Navbar() {
         <div>
           <div className='flex items-center justify-between py-3 md:block md:py-5'>
             <Link href='/' onClick={handleClick}>
-              <h1 className='text-2xl font-bold duration-200 lg:hover:scale-[1.10]'>
-                {siteConfig.name}
+              <h1 className=' className="scroll-m-20 text-2xl text-foreground font-semibold tracking-tight lg:text-3xl"'>
+                {siteConfig.name}.
               </h1>
             </Link>
             <div className='flex gap-1 md:hidden'>
               <button
-                className='rounded-md p-2 text-primary outline-none focus:border focus:border-primary'
+                className='rounded-md p-2 text-primary outline-none focus:border focus:border-foreground'
                 aria-label='Hamburger Menu'
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? (
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6 '
+                    className='h-6 w-6 text-foreground'
                     viewBox='0 0 20 20'
                     fill='currentColor'
                   >
@@ -54,7 +59,7 @@ export default function Navbar() {
                 ) : (
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6 '
+                    className='h-6 w-6 text-foreground'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -74,29 +79,34 @@ export default function Navbar() {
         </div>
         <div>
           <div
-            className={`absolute left-0 right-0 z-10 m-auto w-full justify-self-center rounded-md border bg-background p-4 md:static md:mt-0 md:block md:border-none md:p-0 ${
+            className={`absolute left-0 right-0 z-10 m-auto w-full justify-self-center rounded-md border  p-4 md:static md:mt-0 md:block md:border-none md:p-0 transition-all ${
               navbar ? 'block' : 'hidden'
             }`}
           >
-            <ul className='flex flex-col items-center space-y-4 text-primary opacity-60 md:flex-row md:space-x-6 md:space-y-0'>
+            <ul className='flex flex-col items-center space-y-4 text-foreground md:flex-row md:space-x-6 md:space-y-0'>
               {navLinks.map((link) => {
                 if (link.path) {
                   return (
                     <li key={link.route}>
                       <Link
                         href={link.path}
-                        className='mr-4 hover:underline md:mr-6'
+                        target={link.route === 'Learn' ? '_blank' : '_self'}
+                        className='mr-4 hover:underline md:mr-6 hover:text-primary'
                       >
                         {link.route}
                       </Link>
                     </li>
                   );
                 }
-                if (link.onclick) {
+                if (link.route === 'Log Out') {
                   return (
-                    <Button onClick={link.onclick} key={link.route}>
-                      {link.route}
-                    </Button>
+                    <div className='md:hidden' key={link.route}>
+                      {status === 'authenticated' ? (
+                        <Logout />
+                      ) : status === 'unauthenticated' ? (
+                        <SignIn />
+                      ) : null}
+                    </div>
                   );
                 }
               })}
@@ -104,8 +114,13 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className='hidden md:block'>
+        <div className='hidden md:flex items-center gap-2 '>
           <ThemeSwitch />
+          {status === 'authenticated' ? (
+            <Logout />
+          ) : status === 'unauthenticated' ? (
+            <SignIn />
+          ) : null}
         </div>
       </nav>
     </header>
