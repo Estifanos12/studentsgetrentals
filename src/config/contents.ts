@@ -1,4 +1,7 @@
-import { HeroHeader, ContentSection } from '@/types/contents';
+import { FaBrush, FaHammer, FaPersonBooth, FaWarehouse } from 'react-icons/fa';
+import { LuMicrowave } from 'react-icons/lu';
+
+import { HeroHeader, ContentSection, Contact } from '@/types/contents';
 
 /* ====================
 [> CUSTOMIZING CONTENT <]
@@ -45,25 +48,43 @@ export const requirements: ContentSection = {
   ],
 };
 
-export const features: ContentSection = {
-  header: `Requirements`,
-  subheader: `Requirements Homeowners and property managers will love include:`,
-  image: `/features-img.webp`,
+export const services: ContentSection = {
+  header: `Services`,
+  subheader: `We provide the following services:`,
+  // image: `/features-img.webp`,
   content: [
     {
-      text: `SEO Optimized`,
-      subtext: `Improved website visibility on search engines`,
-      icon: 'fileSearch',
+      text: `Basic house cleaning`,
+      icon: FaWarehouse,
     },
     {
-      text: `Highly Performant`,
-      subtext: `Fast loading times and smooth performance`,
-      icon: 'barChart',
+      text: `Basic house maintainance`,
+      icon: FaHammer,
+    },
+    {
+      text: `Neighbour management`,
+      icon: FaPersonBooth,
+    },
+    {
+      text: `Appliances`,
+      icon: LuMicrowave,
     },
     {
       text: `Easy Customizability`,
       subtext: `Change your content and layout with little effort`,
-      icon: 'settings',
+      icon: FaBrush,
+    },
+    {
+      text: `Easy Customizability`,
+      subtext: `Change your content and layout with little effort`,
+      icon: FaBrush,
     },
   ],
+};
+
+export const contact: Contact = {
+  header: 'Contact Us',
+  subheader: 'We are here to help you',
+  description:
+    'We are here to help you. If you have any questions, please feel free to contact us. We will get back to you as soon as possible.',
 };

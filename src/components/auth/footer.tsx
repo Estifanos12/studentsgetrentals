@@ -16,24 +16,9 @@ type FooterProps = {
 
 const handleLogin = async (provider: string) => {
   try {
-    const response = await signIn(provider, {
+    await signIn(provider, {
       callbackUrl: '/',
       redirect: false,
-    });
-
-    if (!response?.ok) {
-      toast({
-        title: 'Error',
-        description: 'Something went wrong',
-        variant: 'destructive',
-      });
-
-      return;
-    }
-
-    toast({
-      title: 'Success',
-      description: 'Logged in successfully',
     });
   } catch (error) {
     console.log(error);

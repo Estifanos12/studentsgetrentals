@@ -27,6 +27,29 @@ export type CreateStudentBody = {
 
 export interface IApiRequest {
   endpoint: string;
-  method: string;
-  data?: FormData;
+  method:
+    | 'GET'
+    | 'POST'
+    | 'PUT'
+    | 'DELETE'
+    | 'PATCH'
+    | 'OPTIONS'
+    | 'HEAD'
+    | 'CONNECT'
+    | 'TRACE';
+  data?: FormData | string;
 }
+
+export type ContactForm = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type Quiz = {
+  question: string;
+  options: Array<{
+    text: string;
+    value: string;
+  }>;
+};

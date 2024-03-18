@@ -1,5 +1,15 @@
 import mongoose, { Schema, models } from 'mongoose';
 
+const resultSchema = new Schema({
+  category: {
+    type: String,
+    required: true,
+  },
+  score: {
+    type: Number,
+    required: true,
+  },
+});
 const studentSchema = new Schema(
   {
     fullname: {
@@ -18,6 +28,25 @@ const studentSchema = new Schema(
     email_verified: {
       type: Boolean,
       default: false,
+    },
+    results: {
+      //catefory and score
+      type: [resultSchema],
+
+      default: [
+        {
+          category: 'cleaning',
+          score: 0,
+        },
+        {
+          category: 'maintainance',
+          score: 0,
+        },
+        {
+          category: 'plumbing',
+          score: 0,
+        },
+      ],
     },
     password_reset_token: {
       type: String,

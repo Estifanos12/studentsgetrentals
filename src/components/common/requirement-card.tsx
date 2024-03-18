@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 export default function Requirements() {
   return (
-    <section>
+    <section id='requirements'>
       <div className='container px-3 lg:max-w-7xl space-y-8 py-12 text-center lg:py-20'>
         {requirements.header || requirements.subheader ? (
           <HeadingText subtext={requirements.subheader}>
@@ -24,7 +24,7 @@ export default function Requirements() {
             return (
               <Card
                 key={cards.text}
-                className='flex cursor-pointer flex-grow flex-col items-center justify-between gap-4 pb-3 bg-background shadow-lg dark:shadow-none dark:hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#20b256,0_0_10px_#20b256,0_0_20px_#20b256] transition-shadow duration-300  border-transparent'
+                className='flex cursor-pointer flex-grow h-full flex-col items-center justify-between gap-4 pb-3 bg-background shadow-lg dark:shadow-none dark:hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#20b256,0_0_10px_#20b256,0_0_20px_#20b256] transition-shadow duration-300  border-transparent'
               >
                 <div className='flex relative w-full h-[15rem]'>
                   <Image

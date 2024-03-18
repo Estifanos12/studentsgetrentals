@@ -7,4 +7,6 @@ export default withAuth({
   },
 });
 
-export const config = { matcher: ['/learn', '/learn/:path*'] };
+export const config = {
+  matcher: ['/learn', '/learn/:path*', '/quiz/:path*', '/result'],
+};
