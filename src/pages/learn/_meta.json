@@ -1,6 +1,9 @@
 {
-  "index": "Introduction",
-  "basic-housing-cleaning": "Basic Housing Cleaning System",
-  "basic-house-maintainance": "Basic House Maintainance Knowledge",
-  "neighbor-managment": "Neighbor Managment"
+    "index": "Introduction",
+    "appliances": "Appliances",
+    "basic-housing-cleaning": "Basic Housing Cleaning System",
+    "basic-house-maintainance": "Basic House Maintainance Knowledge",
+    "neighbor-managment": "Neighbor Managment",
+    "pest-control": "Pest Control",
+    "credit-score": "Credit Score and Referenece"
 }

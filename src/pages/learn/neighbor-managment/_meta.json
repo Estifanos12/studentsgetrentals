@@ -1,8 +1,5 @@
 {
-  "index": "Introduction",
-  "electrical": "Electrical",
-  "furnance": "Furnance",
-  "plumbing": "Plumbing",
-  "roof": "Roof",
-  "take-quiz": "Take Quiz"
+    "index": "Introduction",
+
+    "take-quiz": "Take Quiz"
 }

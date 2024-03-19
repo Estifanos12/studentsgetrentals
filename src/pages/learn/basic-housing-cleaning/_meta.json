@@ -1,8 +1,8 @@
 {
-  "index": "Introduction",
-  "electrical": "Electrical",
-  "furnance": "Furnance",
-  "plumbing": "Plumbing",
-  "roof": "Roof",
-  "take-quiz": "Take Quiz"
+    "index": "Introduction",
+    "bathroom": "Bathroom",
+    "kitchen": "Kitchen",
+    "living-room": "Living Room, Hallways and Stairs",
+    "roof": "Roof",
+    "take-quiz": "Take Quiz"
 }
